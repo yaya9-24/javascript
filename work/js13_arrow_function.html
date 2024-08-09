@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("hello...");
+
+        //화살표 함수 : arrow function
+        //일급함수로 사용되어지기 위한 함수.
+
+        //1.인자x,리턴x
+        // let fn1 = ()=>{
+        //     console.log("fn1()....");
+        // };
+
+        //실행문이 하나일 대는 블럭생략가능.
+        let fn1 = ()=> console.log("fn1()....");    
+        fn1();
+
+        //2.인자O,리턴x
+        let fn2= (x)=> console.log("fn2()",x);
+        fn2("kim");
+
+        fn2= (x,y)=> console.log("fn2()",x,y);
+        fn2("kim","lee");
+
+        //3.인자x,리턴O
+        // let fn3 = ()=> {
+        //     console.log("fn3()...");
+        //     return 99;
+        // };
+        //블럭 안에 리턴문만 존재 할 경우 블럭과 리턴예약어를 생략할 수 있다.
+        let fn3 = ()=> 99;       
+        let t3 = fn3();
+        console.log(t3);
+
+        fn3 = () => [11,22,33];
+        console.log(fn3());
+
+        console.log((function(){return [11,22,33];})()); // 앞의 ()에 함수를 정의하고 뒤의()를 써서 콜한다.
+        console.log((()=>[11,22,33])());
+        let arr = (()=>[11,22,33])();
+        console.log(arr);
+        
+        // fn3 = () => function(){
+        //     console.log("return fn...");
+        // };
+        fn3 = () => ()=> console.log("return fn...");
+        
+        console.log(fn3());
+        console.log(fn3()());
+        console.log("============================");
+        
+
+        //4.인자O,리턴O
+        // let fn4 = (x=0,y=0)=> {
+        //     console.log("fn4()",x,y);
+        //     return x+y;
+        // }
+        let fn4 = (x=0,y=0)=> x+y;
+
+        let t4 = fn4(11,55);
+        console.log(t4);
+        
+        fn4 = (x=0,y=0)=> {
+            return {name:"kim", age:33};
+        };
+        let obj = fn4("lee",44);
+        console.log(obj);
+
+        fn4 = (x=0,y=0)=> ()=>100;
+        let su = fn4("han",55)()
+        console.log(su);
+        
+        
+    </script>
+</head>
+<body>
+    <h1>class</h1>
+</body>
+</html>

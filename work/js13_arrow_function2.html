@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("hello...");
+
+        let arr = [11,22,33,44,55,66];
+
+        //배열을 반복하는 함수 forEach
+        arr.forEach(element => {
+            console.log(element);            
+        });
+
+        arr.forEach((element,index) => {
+            console.log(element,index);            
+        });
+
+        //배열을 맵핑하는 함수 map
+        arr = arr.map(element=>{
+            return element*10;
+        });
+        console.log(arr);
+
+        //배열을 필터링하는 함수filter
+        arr = [11,22,33,44,55,66];
+        arr = arr.filter(element=>element%2==0);
+        console.log(arr);
+        
+        
+        let names =["yangssem","kim","lee"];
+        //각 요소에 "Hello 이름"으로 데이터를 변경하세요.
+        names = names.map(element=>"Hello "+element);
+        console.log(names);
+        
+
+        names =["yangssem","kim","lee"];
+        //각 요소에서 이름의 길이가 5이상인 이름들만 배열에 할당하세요.
+        names = names.filter(element=>element.length>=5)
+        console.log(names);
+        
+    </script>
+</head>
+<body>
+    <h1>class</h1>
+</body>
+</html>
